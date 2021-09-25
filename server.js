@@ -8,7 +8,6 @@ const PORT = process.env.PORT;
 server.use(cors());
 const weather = require('./data/weather.json')
 
-
 server.get('/', (req, res) => {
 
   res.status(200).send('home route');
