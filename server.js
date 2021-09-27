@@ -1,3 +1,4 @@
+
 'use strict';
 const axios = require('axios');
 const express = require('express');
@@ -70,12 +71,13 @@ function getMovieHandler(req, res){
   });
   }
 
-
+server.get("*", (req, res) => {
+  res.status(404).send("route is not found");
+});
 
 function notFoundHandler(req, res) {
   res.status(404).send('route is not found')
 }
-
 
 
 server.listen(PORT, () => {
